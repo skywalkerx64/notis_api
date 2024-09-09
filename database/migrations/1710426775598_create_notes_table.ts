@@ -8,6 +8,8 @@ export default class extends BaseSchema {
       table.increments('id')
       table.string('title').nullable()
       table.string('content').nullable()
+      table.integer('user_id').unsigned().references('users.id')
+      table.json('tags').nullable()
       table.timestamp('created_at')
       table.timestamp('updated_at')
     })
